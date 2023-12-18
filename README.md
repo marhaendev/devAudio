@@ -131,7 +131,9 @@
 autoplay:true,
         loop: false,
         controls: true,
-        playlist: ['music1.mp3', 'music2.mp3'],
+        playlist: [
+	'https://www.dropbox.com/scl/fi/jz9cker9qozt0di94h1ck/music1.mp3?rlkey=wrevglsuu2fuom2cocb3h5ef3&dl=1',
+	'https://www.dropbox.com/scl/fi/pqwwehqh5scw90hs002fu/music2.mp3?rlkey=8h6qab458l4sr1wd95l6wkq77&dl=1'],
         mute: false,
         onEnd: function() {
             // Callback when the playlist finishes playing
