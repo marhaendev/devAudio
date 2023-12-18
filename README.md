@@ -124,9 +124,9 @@
 <body>
 
 <audio class="dev-audio"></audio>
-
-<script>
 <script src="https://cdn.jsdelivr.net/gh/marhaendev/devAudio@main/script.js"></script>
+<script>
+
     devAudio({
 autoplay:true,
         loop: false,
