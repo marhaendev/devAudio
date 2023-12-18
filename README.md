@@ -1,15 +1,20 @@
 # devAudio Documentation
 
 ## 1. HTML Markup
-[ENG] Add the `<audio>` element with the "dev-audio" class to your HTML document.\
-[ID] Tambahkan elemen `<audio>` dengan kelas "dev-audio" di dalam dokumen HTML Anda.
+**[ENG]** Add the `<audio>` element with the "dev-audio" class to your HTML document.\
+**[ID]** Tambahkan elemen `<audio>` dengan kelas "dev-audio" di dalam dokumen HTML Anda.
 ```html
 <audio class="dev-audio"></audio>
 ```
 
 ## 2. JavaScript Initialization
-[ENG] Use the following script to initialize devaudio with specific options. Make sure to include this script after the audio element in your HTML.\
-[ID] Gunakan script berikut untuk menginisialisasi devaudio dengan opsi tertentu. Pastikan Anda memasukkan script ini setelah elemen audio di HTML.
+**[ENG]** Use the following script to initialize devaudio.\
+**[ID]** Gunakan script berikut untuk menginisialisasi devaudio.
+```javascript
+<script src="https://cdn.jsdelivr.net/gh/marhaendev/devAudio@main/script.js"></script>
+```
+**[ENG]** Make sure to include this script `devAudio` in tag `<script>`. Use options as needed \
+**[ID]** Pastikan Anda memasukkan script `devAudio` dalam tag `<script>`. Gunakan sesuai kebutuhan
 ```javascript
 <script>
     devAudio({
@@ -121,45 +126,7 @@
 <audio class="dev-audio"></audio>
 
 <script>
-    function devAudio(options) {
-        var audio = document.querySelector(".dev-audio");
-        var playlist = options.playlist || [];
-        var currentTrackIndex = 0;
-
-        function playCurrentTrack() {
-            audio.src = playlist[currentTrackIndex];
-            audio.play();
-        }
-
-        function playNextTrack() {
-            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
-            playCurrentTrack();
-        }
-
-        audio.loop = options.loop || false;
-
-        if (options.volume !== undefined) {
-            audio.volume = options.volume;
-        }
-
-        audio.muted = options.mute || false;
-        audio.controls = options.controls || false;
-
-        if (options.onEnd && typeof options.onEnd === "function") {
-            audio.addEventListener('ended', options.onEnd);
-        }
-
-        if (options.delayTime !== undefined && options.delayTime > 0) {
-            setTimeout(function() {
-                playCurrentTrack();
-                audio.addEventListener('ended', playNextTrack);
-            }, options.delayTime);
-        } else {
-            playCurrentTrack(); // Start playing immediately
-            audio.addEventListener('ended', playNextTrack);
-        }
-    }
-
+<script src="https://cdn.jsdelivr.net/gh/marhaendev/devAudio@main/script.js"></script>
     devAudio({
 autoplay:true,
         loop: false,
